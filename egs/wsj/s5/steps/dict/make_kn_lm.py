@@ -132,7 +132,7 @@ class NgramCounts:
 
     def add_raw_counts_from_file(self, filename):
         lines_processed = 0
-        with open(filename) as fp:
+        with open(filename, encoding="utf-8") as fp:
             for line in fp:
                 line = line.strip()
                 if line == '':
@@ -373,5 +373,5 @@ if __name__ == "__main__":
     if args.lm is None:
         ngram_counts.print_as_arpa()
     else:
-        with open(args.lm, 'w') as f:
+        with open(args.lm, 'w', encoding="utf-8") as f:
             ngram_counts.print_as_arpa(fout=f)

@@ -71,7 +71,7 @@ if [ $stage -le 1 ]; then
 fi
 
 if [ $stage -le 2 ]; then
-  # Convert aligned lexicon to arpa using srilm.
+  # Convert aligned lexicon to arpa using make_kn_lm.py, a re-implementation of srilm's ngram-count functionality.
   ./steps/dict/make_kn_lm.py -ngram-order 7 -text ${wdir}/aligned_lexicon.corpus -lm ${wdir}/aligned_lexicon.arpa
 fi
 
